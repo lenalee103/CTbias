@@ -49,8 +49,8 @@ CT reconstruction modalities often introduce inherent biases, impacting image qu
 ## **Installation and Setup**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/bias-elimination-ct-modality.git
-   cd bias-elimination-ct-modality
+   git clone https://github.com/lenalee103/CTbias.git
+   cd CTbias
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
