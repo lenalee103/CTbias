@@ -1,0 +1,27 @@
+model:
+  cfg_path: ./config/sr_sr3_256_512_Chest.json
+  pretrained_path: ./Pretrained/Chest_256_512.pth
+data:
+  root: ./test_data/Chest
+  input_folder: lr_dn
+  cond_folder: lr_dn_p1_B
+  output_folder: hr_dn_p1_B
+  target_folder: lr_dn
+  res: 512 # the input images will be first resized to (res, res) befor denoising
+  len: -1 # -1 for testing all images in the input folder
+diffusion:
+  ddim: True
+  ddim_eta: 1.0
+dn:
+  # mode==0: ConsLam
+  # mode==1: AdaLamI 
+  # mode==2: AdaLamII
+  # mode==3: AdaLamI&II
+  mode: 3
+  lam0: 0.09 # ConsLam: $\lambda_t=\lambda_0\cdot\sqrt{\bar{\alpha}_t}$
+  a: 3.5
+  b: -0.09 # AdaLamI: $\lambda_0^{ada} = a \cdot std(\widehat{n}) + b$
+  c: 1.2 # AdaLamII: $\Lambda_0^{ada} = c \cdot \widehat{n}$
+  resume: 3
+  mean_num: 4 # multiple denoising and take average, reduce mean_num if CUDA_OUT_OF_MEMORY
+  bs: 1 # batch size
