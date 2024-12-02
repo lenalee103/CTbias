@@ -8,7 +8,7 @@ This repository contains the code, data, and analysis for our research on addres
 - `data/`  
   Contains sample data used for the evaluation, including CT reconstructions from different modalities (IMR and iDose Ya).
 
-- `code/`  
+- `Models/`  
   Implementation of the three methods: Gaussian Filter, CycleGAN, and Denoising Diffusion Model. Each method is in its respective folder with training scripts, preprocessing pipelines, and evaluation utilities.
 
 - `results/`  
